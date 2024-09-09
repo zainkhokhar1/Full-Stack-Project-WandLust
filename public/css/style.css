@@ -114,7 +114,7 @@ body {
 
 /* Show page */
 .show-img {
-    height: 70vh;
+    height: auto;
 }
 
 .btns {
@@ -124,4 +124,24 @@ body {
 .show-card {
     padding-left: 0;
     padding-right: 0;
+}
+@media (max-width: 430px) {
+    .show-img
+    {
+        height: auto !important;
+    }
+    .edit-btn{
+        width: fit-content !important;
+    }
+    .card-inner {
+        width: 90% !important;
+    }
+    .show-card{
+        margin-left: 2rem !important;
+    }
+    .title{
+        font-size: 1rem;
+        margin-left: -1rem !important;
+    }
+    
 }

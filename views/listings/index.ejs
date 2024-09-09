@@ -10,9 +10,9 @@
 
         .filter {
             text-align: center;
-            margin-right: 1.8rem;
             margin-top: 2rem;
             opacity: 0.7;
+            transition: 0.2s ease-in-out;
         }
 
         #filters a {
@@ -22,6 +22,7 @@
 
         .filter:hover {
             opacity: 1;
+            color: #fe424d;
         }
 
         .filter {
@@ -39,85 +40,131 @@
         .tax-toggle {
             border: 1px solid rgba(135, 135, 135, 135);
             border-radius: 1rem;
-            height: 2.7rem;
+            height: auto;
+            width: fit-content;
             padding: 0.5rem;
             padding-top: 0.5rem;
             margin: 0;
             margin-top: 0.7rem;
+            margin-inline: auto;
+            box-shadow: 1px 2px 0.1rem #fe424d;
+            border: 1px solid #fe424d;
         }
+
         @media (max-width: 1050px) {
-         #filters{
-            flex-wrap: wrap;
-         }   
+            #filters {
+                flex-wrap: wrap;
+            }
+        }
+
+        .form-check-input:checked {
+            background-color: #fe424d !important;
+            color: white;
+        }
+    </style>
+    <style>
+        .swiper {
+            width: 100%;
+            height: 9%;
+        }
+
+        .swiper-slide {
+            text-align: center;
+            font-size: 27px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #left-btn::after,
+        #right-btn::after {
+            font-size: 1.8rem;
+            color: #fe424d;
+        }
+
+        .swiper {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .swiper-pagination{
+           top: 90px !important;
+        }
+        .swiper-pagination-bullet-active{
+            background: #fe424d !important;
         }
     </style>
 
-    <div id="filters">
-        <a href="/listings/">
-            <div class="filter">
-                <div><i class="fa-solid fa-cloud-arrow-up"></i></div>
-                <p>All</p>
-            </div>
-        </a>
-        <a href="/listings/category/Trending">
-            <div class="filter">
-                <div><i class="fa-solid fa-fire"></i></div>
-                <p>Trending</p>
-            </div>
-        </a>
-        <a href="/listings/category/Rooms">
-            <div class="filter">
-                <div><i class="fa-solid fa-bed"></i></div>
-                <p>Rooms</p>
-            </div>
-        </a>
-        <a href="/listings/category/Iconic Cities">
-            <div class="filter">
-                <div><i class="fa-solid fa-mountain-city"></i></div>
-                <p>Iconic Cities</p>
-            </div>
-        </a>
-        <a href="/listings/category/Mountains">
-            <div class="filter">
-                <div><i class="fa-solid fa-mountain"></i></div>
-                <p>Mountains</p>
-            </div>
-        </a>
-        <a href="/listings/category/Castles">
-            <div class="filter">
-                <div><i class="fa-brands fa-fort-awesome"></i></div>
-                <p>Castles</p>
-            </div>
-        </a>
-        <a href="/listings/category/Amazing Pools">
-            <div class="filter">
-                <div><i class="fa-solid fa-person-swimming"></i></div>
-                <p>Amazing Pools</p>
-            </div>
-            <a href="/listings/category/Camping">
+    <div id="filters" class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <a class="swiper-slide" href="/listings/">
                 <div class="filter">
-                    <div><i class="fa-solid fa-campground"></i></i></div>
-                    <p>Camping</p>
+                    <div><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                    <p>All</p>
                 </div>
             </a>
-            <a href="/listings/category/Farms">
+            <a class="swiper-slide" href="/listings/category/Trending">
                 <div class="filter">
-                    <div><i class="fa-solid fa-cow"></i></div>
-                    <p>Farms</p>
+                    <div><i class="fa-solid fa-fire"></i></div>
+                    <p>Trending</p>
                 </div>
             </a>
-            <a href="/listings/category/Arctic">
+            <a class="swiper-slide" href="/listings/category/Rooms">
                 <div class="filter">
-                    <div><i class="fa-regular fa-snowflake"></i></div>
-                    <p>Arctic</p>
+                    <div><i class="fa-solid fa-bed"></i></div>
+                    <p>Rooms</p>
                 </div>
             </a>
-            <div class="tax-toggle">
-                <div class=" form-check-reverse form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">Display total after taxes</label>
+            <a class="swiper-slide" href="/listings/category/Iconic Cities">
+                <div class="filter">
+                    <div><i class="fa-solid fa-mountain-city"></i></div>
+                    <p>Iconic Cities</p>
                 </div>
-            </div>
+            </a>
+            <a class="swiper-slide" href="/listings/category/Mountains">
+                <div class="filter">
+                    <div><i class="fa-solid fa-mountain"></i></div>
+                    <p>Mountains</p>
+                </div>
+            </a>
+            <a class="swiper-slide" href="/listings/category/Castles">
+                <div class="filter">
+                    <div><i class="fa-brands fa-fort-awesome"></i></div>
+                    <p>Castles</p>
+                </div>
+            </a>
+            <a class="swiper-slide" href="/listings/category/Amazing Pools">
+                <div class="filter">
+                    <div><i class="fa-solid fa-person-swimming"></i></div>
+                    <p>Amazing Pools</p>
+                </div>
+                <a class="swiper-slide" href="/listings/category/Camping">
+                    <div class="filter">
+                        <div><i class="fa-solid fa-campground"></i></i></div>
+                        <p>Camping</p>
+                    </div>
+                </a>
+                <a class="swiper-slide" href="/listings/category/Farms">
+                    <div class="filter">
+                        <div><i class="fa-solid fa-cow"></i></div>
+                        <p>Farms</p>
+                    </div>
+                </a>
+                <a class="swiper-slide" href="/listings/category/Arctic">
+                    <div class="filter">
+                        <div><i class="fa-regular fa-snowflake"></i></div>
+                        <p>Arctic</p>
+                    </div>
+                </a>
+        </div>
+        <div id="left-btn" class="swiper-button-next"></div>
+        <div id="right-btn" class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="tax-toggle">
+        <div class=" form-check-reverse form-switch">
+            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Include taxes</label>
+        </div>
     </div>
     <div class="row row-cols-xl-3 row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
         <% for(let listing of allListings){ %>
@@ -152,4 +199,20 @@
                 }
             })
         })
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
     </script>

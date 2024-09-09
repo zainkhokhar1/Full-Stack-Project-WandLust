@@ -1,12 +1,12 @@
 <% layout('/layouts/boilerplate.ejs') -%>
     <div class="row mt-3 mb-4">
         <div class="col-8 offset-2">
-            <h3>
+            <h3 class="title">
                 <%=listingFounded.title %>
             </h3>
         </div>
         <div class="card card-listing col-7 offset-2 show-card ">
-            <img src="<%=listingFounded.image.url%>" class="card-img show-img" alt="Listing_img">
+            <img  src="<%=listingFounded.image.url%>" class="card-img show-img" alt="Listing_img">
             <div class="card-body">
                 <p class="card-text">
                 <p>
@@ -80,7 +80,7 @@
                         All Reviews
                     </h3>
 
-                    <div class="row">
+                    <div class="row flex flex-wrap">
                         <% if(!listingFounded.reviews.length) {%>
                             <div class="container col-8 offset-3 mt-4">
                                 <h3>No Reveiws Yet</h3>
@@ -88,7 +88,7 @@
                             <% } %>
                                 <% if(listingFounded.reviews.length) {%>
                                     <% for(let review of listingFounded.reviews) { %>
-                                        <div class="card col-5 mb-3 ms-3">
+                                        <div class="card col-5 mb-3 ms-3 card-inner">
                                             <div class="card-body">
                                                 <p class="card-title pt-2 pb-2">
                                                     Created by <b><i>
